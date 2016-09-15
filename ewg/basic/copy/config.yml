@@ -1,0 +1,27 @@
+development: &default
+  enabled: true
+  selector: '**/*'
+  repetitive:
+    -
+      source: 'src/assets/public'
+      target: 'dist'
+    -
+      source: 'src/assets/images'
+      target: 'dist/images'
+    -
+      source: 'node_modules/bootstrap-sass/assets/fonts/bootstrap'
+      target: 'dist/fonts'
+    -
+      source: 'node_modules/bootstrap-sass/assets/javascripts'
+      target: 'dist/scripts'
+      selector: '*bootstrap.min.js'
+    -
+      source: 'node_modules/jquery/dist'
+      target: 'dist/scripts'
+      selector: '*jquery.min.js'
+
+test:
+  <<: *default
+
+production:
+  <<: *default
